@@ -1,6 +1,6 @@
-# Ampe_js
+# Ampe.js
 
-Ampe_js simulates the real life African game - [AMPE](https://www.youtube.com/watch?v=wZPeon377mM). 
+Ampe.js simulates the real life African game - [AMPE](https://www.youtube.com/watch?v=wZPeon377mM). 
 
 
 ## Game Rules
