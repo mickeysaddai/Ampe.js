@@ -16,7 +16,7 @@ let score = 0;
 function boardsize(){
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.strokeRect(0, 0, canvas.width, canvas.height)
-    // ctx.fillRect(10, 10, 50, 50)
+    // ctx.fillRect(20, 200, 100, 100)
     // requestAnimationFrame(animate)
 }
 boardsize()

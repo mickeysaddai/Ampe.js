@@ -1,10 +1,11 @@
 class Player{
     constructor(){
-        this.team = [];   
+        //position
+        //color
+        //status :active, inactive, dead
     }
-
     renderMove(){
-        
+
     }
 
 
