@@ -1,41 +1,72 @@
 document.addEventListener("DOMContentLoaded", () => {
     // const main = document.getElementById('main')
     console.log('Ampe!!!')
+
+    document.getElementById('start-button').addEventListener('click', function(){
+      
+        const numberOfPlayers = prompt('Please enter your number of players')
+        console.log('You entered ', numberOfPlayers)
+        setUpGameBoard(numberOfPlayers)
+        document.getElementById('start-button').disabled = true;
+    })
 })
+
+
 
 const canvas = document.getElementById('canvas'); //canvas setup
 const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
-canvas.width = 600;
-canvas.height = 400;
+canvas.width = 500;
+canvas.height = 300;
+
 
 let angle = 0; //make player goes up or down
 let hue = 0; 
 let score = 0;
-// let gamespeed = 2;
 
-function boardsize(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+function setUpGameBoard(players = 1) {
+
+    createPlayers(players, 75)
+    createPlayers(players, 185)
+}
+
+function createPlayer(xCoord = 100, yCoord = 75){ //for a single player
+    // ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.strokeRect(0, 0, canvas.width, canvas.height)
     // ctx.fillRect(20, 200, 100, 100)
+    
+    ctx.beginPath();
+    ctx.arc(xCoord, yCoord, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+
     // requestAnimationFrame(animate)
 }
-boardsize()
 
+function createPlayers(numberOfPlayers, yCoord) { //for multiple players
+    let startingXCoord = 100
+    const startingYCoord = yCoord || 75;
 
-
-
-let player = {
-    x: 300,
-    y: 300,
-    width: 20,
-    height: 20
-
-    // x_vel: 0,
-    // y_vel: 0
-
+    for (let i = 0; i < numberOfPlayers; i++) {
+        createPlayer(startingXCoord, startingYCoord);
+        startingXCoord += 75;
+    }
 }
 
 
+
+
+
+
+
+// let player = {
+//     x: 300,
+//     y: 300,
+//     width: 20,
+//     height: 20
+
+//     // x_vel: 0,
+//     // y_vel: 0
+
+// }
 
 
 
