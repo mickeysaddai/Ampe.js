@@ -1,12 +1,13 @@
-// const Game = require('./scripts/game.js');
+const Game = require('./scripts/game.js');
 
 
-const canvas = document.getElementById('canvas'); //canvas setup
-const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
-canvas.width = 500;
-canvas.height = 300;
+
 
 document.addEventListener("DOMContentLoaded", () => {
+    const canvas = document.getElementById('canvas'); //canvas setup
+    const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
+    canvas.width = 400;
+    canvas.height = 300;
     // const main = document.getElementById('main')
     console.log('Ampe!!!')
 

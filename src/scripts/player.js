@@ -40,21 +40,14 @@ class Player {
         this.ctx.beginPath();
         this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
         if(this.teamType === 'TEAM_MATCH'){
-            ctx.fillStyle = "pink"; 
+            this.ctx.fillStyle = "pink"; 
             
         } else {
             let rand = Math.random();
-            if (rand < 0.5) {
-                ctx.fillStyle = "black";
-
-            } else {
-                ctx.fillStyle = "yellow";
-
-            }
-            
+            this.ctx.fillStyle = "black"; 
         }
-        ctx.closePath();
-        ctx.fill();
+        this.ctx.closePath();
+        this.ctx.fill();
 
         // this.ctx.addEventListener('click', () =>{
         //     console.log('you clicked me', this)
@@ -69,18 +62,18 @@ class Player {
     }
 
     setPlayerColor(color = "blue"){
-
-        this.drawPlayer()
-        this.clearColor();
-        this.color = color;
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.closePath();
-
+        let that = this;
+        setTimeout(function () { 
+            that.drawPlayer()
+            that.clearColor();
+            that.color = color;
+            ctx.fillStyle = that.color;
+            ctx.fill();
+            ctx.closePath() }, 3000);
+        
     }
             
-
 }
 
 
-// module.exports = Player;
+module.exports = Player;

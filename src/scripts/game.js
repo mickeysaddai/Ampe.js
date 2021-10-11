@@ -1,4 +1,4 @@
-// const Team = require('./team') 
+const Team = require('./team') 
 class Game {
     ctx;
     numberOfPlayers;
@@ -41,7 +41,7 @@ class Game {
 
     makeMove(){
         this.teamMatch.activateCurrentPlayer();
-        // this.teamUnmatch.activateCurrentPlayer();
+        this.teamUnmatch.activateCurrentPlayer();
 
     }
 
@@ -54,4 +54,4 @@ class Game {
 //puts Player #{name} wins
 //
 
-// module.exports  = Game;
+module.exports  = Game;

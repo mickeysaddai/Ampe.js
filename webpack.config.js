@@ -33,7 +33,7 @@ const config = {
         ],
     },
     plugins: [new MiniCssExtractPlugin()],
-    target: 'web'
+    // target: 'web'
 };
 
 module.exports = (env, argv) => {

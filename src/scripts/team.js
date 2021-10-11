@@ -1,4 +1,4 @@
-// const Player = require('./player');
+const Player = require('./player');
 const TEAM_TYPE = {
     TEAM_MATCH: 'TEAM_MATCH',
     TEAM_UNMATCH: 'TEAM_UNMATCH'
@@ -18,7 +18,7 @@ class Team {
     constructor(numberOfPlayers, teamType, ctx) {
         this.numberOfPlayers = numberOfPlayers;
         this.teamType = teamType;
-        createPlayers();
+        // createPlayers();
         this.ctx = ctx;
     }
 
@@ -45,22 +45,20 @@ class Team {
     }
 
     activateCurrentPlayer(){
-        const currentPlayer = this.players[this.players.length - 1];
-        const second = this.players[2];
-        second.setPlayerColor('red');
+        const currentPlayer = this.players[0];
+    
         // currentPlayer.setPlayerColor("yellow");
 
-        // if (this.teamType === TEAM_TYPE.TEAM_MATCH){
-        //     currentPlayer.setPlayerColor("red")
-        // } else {
-        //     // random generate color for comp player
-        //     // currentPlayer.setPlayerColor()
-        // }
-
+        if (this.teamType === TEAM_TYPE.TEAM_MATCH){
+            currentPlayer.setPlayerColor("red")
+        } else {
+            // random generate color for comp player
+            currentPlayer.setPlayerColor()
+        }
     }
 
 }
 
 
 
-// module.exports = Team;
+module.exports = Team;
