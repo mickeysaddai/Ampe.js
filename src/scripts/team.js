@@ -10,15 +10,15 @@ class Team {
     //isDead?()
     //two teams : Team A, Team B
 
-
     players;
     teamType;
     numberOfPlayers;
-    ctx;    
+    ctx;   
+     
     constructor(numberOfPlayers, teamType, ctx) {
         this.numberOfPlayers = numberOfPlayers;
         this.teamType = teamType;
-        this.players = [];
+        this.players = createPlayers();
         this.ctx = ctx;
     }
 
@@ -30,18 +30,37 @@ class Team {
 
     createPlayers() {
         let startingXCoord = 100;
+        let playerList = [];
         for (let i = 0; i < this.numberOfPlayers; i++) {
             console.log(startingXCoord, this.getTeamYCoord())
-            const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord());
+            const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord(),this.teamType);
             currentPlayer.drawPlayer();
+            playerList.push(currentPlayer);
             startingXCoord += 75;
-            // startingX,
-            // yCoord
-            // some color
+            // currentPlayer.setPlayerColor(color);
 
         }
+        this.players = playerList;
+        return playerList;
+    }
+
+    activateCurrentPlayer(){
+        const currentPlayer = this.players[this.players.length - 1];
+        const second = this.players[1];
+        second.setPlayerColor('red');
+        // currentPlayer.setPlayerColor("yellow");
+
+        // if (this.teamType === TEAM_TYPE.TEAM_MATCH){
+        //     currentPlayer.setPlayerColor("red")
+        // } else {
+        //     // random generate color for comp player
+        //     // currentPlayer.setPlayerColor()
+        // }
+
     }
 
 }
+
+
 
 // module.exports = Team;

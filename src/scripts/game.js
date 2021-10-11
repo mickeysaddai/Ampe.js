@@ -2,6 +2,10 @@
 class Game {
     ctx;
     numberOfPlayers;
+    teamMatch;
+    teamUnmatch;
+
+     COLORS = [ "red", "blue", "yellow"]
     constructor(ctx, numberOfPlayers){
         this.ctx = ctx;
         this.numberOfPlayers = numberOfPlayers;
@@ -13,12 +17,12 @@ class Game {
 
 
     drawGame(){
-     const teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );
-     const teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
+     this.teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );
+     this.teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
      this.ctx.strokeRect(0, 0, 500, 300)
      
-     teamMatch.createPlayers();
-     teamUnmatch.createPlayers();
+     this.teamMatch.createPlayers();
+     this.teamUnmatch.createPlayers();
     }
     
     promptUser(){
@@ -28,6 +32,17 @@ class Game {
 
     randomColorGenerator(){
         //generates a pair of random colors for user to choose from
+    }
+
+    setComputerColor(){
+
+
+    }
+
+    makeMove(){
+        this.teamMatch.activateCurrentPlayer();
+        this.teamUnmatch.activateCurrentPlayer();
+
     }
 
 }

@@ -11,23 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('Ampe!!!')
 
     document.getElementById('start-button').addEventListener('click', function(){
-      console.log('clcicked')
+      console.log('clicked')
         const numberOfPlayers = prompt('Please enter your number of players')
         const game = new Game(ctx, numberOfPlayers);
         game.drawGame();
         // console.log('You entered ', numberOfPlayers)
         // setUpGameBoard(numberOfPlayers)
-        document.getElementById('start-button').disabled = true;
+        disabled = document.getElementById('start-button').disabled = true;
+
+
+
+
+        const chooseButton = document.createElement('button');
+        chooseButton.innerText = 'Choose Color';
+         document.getElementById('color-selector').append(chooseButton);
+
+        chooseButton.addEventListener('click', function(){
+            game.makeMove();
+        })
+
     })
+    
 })
 
 
 
-
-
-let angle = 0; //make player goes up or down
-let hue = 0; 
-let score = 0;
 
 function setUpGameBoard(players = 1) {
 
