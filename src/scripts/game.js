@@ -1,9 +1,7 @@
-const Team = require('./team') 
+// const Team = require('./team') 
 class Game {
     ctx;
     numberOfPlayers;
-
-
     constructor(ctx, numberOfPlayers){
         this.ctx = ctx;
         this.numberOfPlayers = numberOfPlayers;
@@ -13,9 +11,12 @@ class Game {
 
     };
 
+
     drawGame(){
      const teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );
      const teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
+     this.ctx.strokeRect(0, 0, 500, 300)
+     
      teamMatch.createPlayers();
      teamUnmatch.createPlayers();
     }
@@ -38,4 +39,4 @@ class Game {
 //puts Player #{name} wins
 //
 
-module.exports  = Game;
+// module.exports  = Game;

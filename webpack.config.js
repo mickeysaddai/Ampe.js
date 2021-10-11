@@ -1,3 +1,5 @@
+// webpack.config.js
+
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -31,6 +33,7 @@ const config = {
         ],
     },
     plugins: [new MiniCssExtractPlugin()],
+    target: 'web'
 };
 
 module.exports = (env, argv) => {

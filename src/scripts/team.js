@@ -1,4 +1,4 @@
-const Player = require('./player');
+// const Player = require('./player');
 const TEAM_TYPE = {
     TEAM_MATCH: 'TEAM_MATCH',
     TEAM_UNMATCH: 'TEAM_UNMATCH'
@@ -29,8 +29,9 @@ class Team {
     }
 
     createPlayers() {
-        const startingXCoord = 100;
+        let startingXCoord = 100;
         for (let i = 0; i < this.numberOfPlayers; i++) {
+            console.log(startingXCoord, this.getTeamYCoord())
             const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord());
             currentPlayer.drawPlayer();
             startingXCoord += 75;
@@ -43,4 +44,4 @@ class Team {
 
 }
 
-module.exports = Team;
+// module.exports = Team;

@@ -13,9 +13,9 @@ class Player {
     xCoord // xpositionm
     yCoord // y position
     
-    constructor(pos,ctx,  xCoord, yCoord){
+    constructor(pos,ctx, xCoord, yCoord, teamType){
         this.pos = pos,
-        this.color = color,
+        this.color = "color",
         this.status = STATUS_TYPES.INACTIVE;
         this.xCoord = xCoord;
         this.yCoord = yCoord;
@@ -40,9 +40,22 @@ class Player {
 
         this.ctx.beginPath();
         this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
-        this.ctx.stroke();
+        ctx.fillStyle = "#c82124"; //red4
+        // ctx.arc(15, 15, 15, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+        // this.ctx.addEventListener('click', () => {
+        //     console.log("You clicked me ", this);
+        //     ctx.fillStyle = "blue"; //red4
+        //     ctx.fill();
+
+
+        // })
+        // this.ctx.fillArc()
+        // this.ctx.stroke();
     }
+
 }
 
 
-module.exports = Player;
+// module.exports = Player;

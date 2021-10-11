@@ -1,5 +1,4 @@
-// const GameView = require("./scripts/game_view")
-const Game = require('./scripts/game.js');
+// const Game = require('./scripts/game.js');
 
 
 const canvas = document.getElementById('canvas'); //canvas setup

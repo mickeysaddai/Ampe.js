@@ -12,6 +12,6 @@
 
 .parent-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 300px;
 }
