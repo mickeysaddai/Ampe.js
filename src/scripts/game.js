@@ -1,9 +1,25 @@
+const Team = require('./team') 
 class Game {
+    ctx;
+    numberOfPlayers;
 
-    constructor(){
 
+    constructor(ctx, numberOfPlayers){
+        this.ctx = ctx;
+        this.numberOfPlayers = numberOfPlayers;
     }
 
+    startGame(){
+
+    };
+
+    drawGame(){
+     const teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );
+     const teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
+     teamMatch.createPlayers();
+     teamUnmatch.createPlayers();
+    }
+    
     promptUser(){
         //privides an option of two colors for using to choose one
         //once user chooses color //prompts user to pick "Match" or "Unmatched"
@@ -21,3 +37,5 @@ class Game {
 //gameOver --> when dead player === teamSize
 //puts Player #{name} wins
 //
+
+module.exports  = Game;
