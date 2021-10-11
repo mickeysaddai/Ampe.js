@@ -18,7 +18,7 @@ class Team {
     constructor(numberOfPlayers, teamType, ctx) {
         this.numberOfPlayers = numberOfPlayers;
         this.teamType = teamType;
-        this.players = createPlayers();
+        createPlayers();
         this.ctx = ctx;
     }
 
@@ -46,7 +46,7 @@ class Team {
 
     activateCurrentPlayer(){
         const currentPlayer = this.players[this.players.length - 1];
-        const second = this.players[1];
+        const second = this.players[2];
         second.setPlayerColor('red');
         // currentPlayer.setPlayerColor("yellow");
 

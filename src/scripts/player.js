@@ -43,7 +43,14 @@ class Player {
             ctx.fillStyle = "pink"; 
             
         } else {
-            ctx.fillStyle = "black";
+            let rand = Math.random();
+            if (rand < 0.5) {
+                ctx.fillStyle = "black";
+
+            } else {
+                ctx.fillStyle = "yellow";
+
+            }
             
         }
         ctx.closePath();
@@ -56,7 +63,15 @@ class Player {
         // })
     }
 
+    clearColor(){
+         this.color = '';
+
+    }
+
     setPlayerColor(color = "blue"){
+
+        this.drawPlayer()
+        this.clearColor();
         this.color = color;
         ctx.fillStyle = this.color;
         ctx.fill();

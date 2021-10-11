@@ -41,7 +41,7 @@ class Game {
 
     makeMove(){
         this.teamMatch.activateCurrentPlayer();
-        this.teamUnmatch.activateCurrentPlayer();
+        // this.teamUnmatch.activateCurrentPlayer();
 
     }
 
