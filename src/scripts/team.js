@@ -51,10 +51,10 @@ class Team {
         const currentPlayer = this.getCurrentPlayer();
         
         if (this.teamType === TEAM_TYPE.TEAM_MATCH){
-            currentPlayer.activatePlayer("red")
+            currentPlayer.setPlayerColor("red")
         } else {
             
-            currentPlayer.activatePlayer()
+            currentPlayer.setPlayerColor()
         }
     }
     

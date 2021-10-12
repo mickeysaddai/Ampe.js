@@ -61,7 +61,7 @@ class Player {
 
     }
 
-    activatePlayer(color = "blue"){
+    setPlayerColor(color = "blue"){
         let that = this;
         setTimeout(function () { 
             that.drawPlayer()
