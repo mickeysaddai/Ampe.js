@@ -43,7 +43,7 @@ class Player {
             this.ctx.fillStyle = "pink"; 
             
         } else {
-            let rand = Math.random();
+            // let rand = Math.random();
             this.ctx.fillStyle = "black"; 
         }
         this.ctx.closePath();
