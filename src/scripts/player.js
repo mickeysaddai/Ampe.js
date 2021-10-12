@@ -61,17 +61,36 @@ class Player {
 
     }
 
-    setPlayerColor(color = "blue"){
+    activatePlayer(color = "blue"){
         let that = this;
         setTimeout(function () { 
             that.drawPlayer()
             that.clearColor();
-            that.color = color;
-            ctx.fillStyle = that.color;
-            ctx.fill();
-            ctx.closePath() }, 3000);
+            that.color = that.teamType === 'TEAM_MATCH' ? color : that.generateRandomColor();
+            that.ctx.fillStyle = that.color;
+            that.ctx.fill();
+            that.ctx.closePath() }, 2000);
         
     }
+
+    deactivatePlayer(){
+        this.clearColor();
+        console.log("deactivating player", this.pos, this.teamType)
+        this.drawPlayer();
+        this.status = STATUS_TYPES.INACTIVE;
+
+    }
+    generateRandomColor(){
+        const rand = Math.random();
+
+        if (rand < 0.5){
+            return "blue"
+        } else {
+            return "red";
+        }
+    }
+
+
             
 }
 

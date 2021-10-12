@@ -14,17 +14,19 @@ class Team {
     teamType;
     numberOfPlayers;
     ctx;   
+    currentPlayerPosition;
      
     constructor(numberOfPlayers, teamType, ctx) {
         this.numberOfPlayers = numberOfPlayers;
         this.teamType = teamType;
-        // createPlayers();
         this.ctx = ctx;
+        this.currentPlayerPosition = 0;
+
     }
 
     getTeamYCoord() {
-        const startingMatchYCoord = 75;
-        const startingUnmatchYCoord = 185;
+        const startingMatchYCoord = 185;
+        const startingUnmatchYCoord = 75;
         return this.teamType === TEAM_TYPE.TEAM_MATCH ? startingMatchYCoord : startingUnmatchYCoord;
     }
 
@@ -44,18 +46,31 @@ class Team {
         return playerList;
     }
 
-    activateCurrentPlayer(){
-        const currentPlayer = this.players[0];
     
-        // currentPlayer.setPlayerColor("yellow");
-
+    activateCurrentPlayer(){
+        const currentPlayer = this.getCurrentPlayer();
+        
         if (this.teamType === TEAM_TYPE.TEAM_MATCH){
-            currentPlayer.setPlayerColor("red")
+            currentPlayer.activatePlayer("red")
         } else {
-            // random generate color for comp player
-            currentPlayer.setPlayerColor()
+            
+            currentPlayer.activatePlayer()
         }
     }
+    
+    getCurrentPlayer(){
+        return this.players[this.currentPlayerPosition];
+        
+    }
+
+    getNextPlayer(){ //change to set next player
+       const currentPlayer = this.getCurrentPlayer()
+       currentPlayer.deactivatePlayer();
+       this.currentPlayerPosition ++;
+        return this.players[this.currentPlayerPosition];
+    }
+
+
 
 }
 

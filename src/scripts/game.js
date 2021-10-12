@@ -17,12 +17,12 @@ class Game {
 
 
     drawGame(){
+    this.teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
      this.teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );
-     this.teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
      this.ctx.strokeRect(0, 0, 500, 300)
      
-     this.teamMatch.createPlayers();
      this.teamUnmatch.createPlayers();
+     this.teamMatch.createPlayers();
     }
     
     promptUser(){
@@ -34,16 +34,32 @@ class Game {
         //generates a pair of random colors for user to choose from
     }
 
-    setComputerColor(){
-
-
-    }
-
     makeMove(){
-        this.teamMatch.activateCurrentPlayer();
+       const winnerEle = window.document.getElementById('winner-container');
+
         this.teamUnmatch.activateCurrentPlayer();
+        this.teamMatch.activateCurrentPlayer();
+        const winner = this.getCurrentRoundWinner()
+        console.log("current winner is", winner.teamType);
+        winnerEle.innerText = `Current winner is ${winner.teamType}` 
+       
 
     }
+
+    getCurrentRoundWinner(){
+       
+        if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color ){
+            //incremenet scoreboard for tema match
+            this.teamUnmatch.getNextPlayer();
+            return this.teamMatch.getCurrentPlayer();
+        
+        } else {
+            //increment score board for unmatch
+            this.teamMatch.getNextPlayer();
+            return this.teamUnmatch.getCurrentPlayer();
+        }
+    }
+
 
 }
 //Random color generator

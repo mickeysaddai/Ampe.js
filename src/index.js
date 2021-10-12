@@ -6,8 +6,8 @@ const Game = require('./scripts/game.js');
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas'); //canvas setup
     const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
-    canvas.width = 400;
-    canvas.height = 300;
+    canvas.width = 600;
+    canvas.height = 400;
     // const main = document.getElementById('main')
     console.log('Ampe!!!')
 
@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
          document.getElementById('color-selector').append(chooseButton);
 
         chooseButton.addEventListener('click', function(){
+
             game.makeMove();
         })
 
@@ -56,15 +57,15 @@ function createPlayer(xCoord = 100, yCoord = 75){ //for a single player
     // requestAnimationFrame(animate)
 }
 
-function createPlayers(numberOfPlayers, yCoord) { //for multiple players
-    let startingXCoord = 100
-    const startingYCoord = yCoord || 75;
+// function createPlayers(numberOfPlayers, yCoord) { //for multiple players
+//     let startingXCoord = 100
+//     const startingYCoord = yCoord || 75;
 
-    for (let i = 0; i < numberOfPlayers; i++) {
-        createPlayer(startingXCoord, startingYCoord);
-        startingXCoord += 75;
-    }
-}
+//     for (let i = 0; i < numberOfPlayers; i++) {
+//         createPlayer(startingXCoord, startingYCoord);
+//         startingXCoord += 75;
+//     }
+// }
 
 
 
@@ -105,3 +106,8 @@ function createPlayers(numberOfPlayers, yCoord) { //for multiple players
 //         ctx.strokeRect(50, 50, 50, 50);
 //     }
 // }
+
+
+//who currently won adn who currenlty lost
+//pass the current winner and the other team.getnextplayer
+//get round winner
