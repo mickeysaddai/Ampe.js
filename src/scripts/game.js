@@ -52,12 +52,12 @@ class Game {
         console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
         if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color ){
             //incremenet scoreboard for tema match
-            this.teamUnmatch.getNextPlayer();
+            this.teamUnmatch.setNextPlayer();
             return this.teamMatch.getCurrentPlayer();
         
         } else {
             //increment score board for unmatch
-            this.teamMatch.getNextPlayer();
+            this.teamMatch.setNextPlayer();
             return this.teamUnmatch.getCurrentPlayer();
         }
     }

@@ -63,11 +63,26 @@ class Team {
         
     }
 
-    getNextPlayer(){ //change to set next player
-       const currentPlayer = this.getCurrentPlayer()
-       currentPlayer.deactivatePlayer();
-       this.currentPlayerPosition ++;
-        return this.players[this.currentPlayerPosition];
+    setNextPlayer() { //change to set next player
+        const currentPlayer = this.getCurrentPlayer()
+        // currentPlayer.deactivatePlayer();
+
+        if (currentPlayer.pos < this.players.length) {
+            this.currentPlayerPosition++;
+            return this.players[this.currentPlayerPosition];
+
+        } else {
+            return currentPlayer.killPlayer();
+            //    currentPlayer
+            //if I won return me
+            // if I lost kill me, and return first player pro
+
+
+        }
+    }
+
+    lastPlayer(){
+        
     }
 
 

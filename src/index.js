@@ -25,12 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const chooseButton = document.createElement('button');
         chooseButton.innerText = 'Choose Color';
+
+
          document.getElementById('color-selector').append(chooseButton);
 
         chooseButton.addEventListener('click', function(){
 
             game.makeMove();
         })
+
+
+        // const colors = ["red", "blue"];
+
+        // const selectColor = document.createElement("select")
 
     })
     

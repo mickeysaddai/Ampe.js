@@ -80,7 +80,16 @@ class Player {
         } else {
             return "red";
         }
-    }       
+    }  
+    
+    killPlayer(){
+        this.status = STATUS_TYPES.DEAD;
+        this.ctx.beginPath();
+        this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
+        this.ctx.fillStyle = "grey";
+        this.ctx.closePath();
+        this.ctx.fill();   
+    }
 }
 
 
