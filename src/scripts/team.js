@@ -34,7 +34,7 @@ class Team {
         let startingXCoord = 100;
         let playerList = [];
         for (let i = 0; i < this.numberOfPlayers; i++) {
-            console.log(startingXCoord, this.getTeamYCoord())
+            // console.log(startingXCoord, this.getTeamYCoord())
             const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord(),this.teamType);
             currentPlayer.drawPlayer();
             playerList.push(currentPlayer);

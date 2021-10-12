@@ -47,7 +47,9 @@ class Game {
     }
 
     getCurrentRoundWinner(){
-       
+        
+        console.log("match", this.teamMatch.getCurrentPlayer().color);
+        console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
         if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color ){
             //incremenet scoreboard for tema match
             this.teamUnmatch.getNextPlayer();

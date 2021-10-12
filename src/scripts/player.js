@@ -43,34 +43,26 @@ class Player {
             this.ctx.fillStyle = "pink"; 
             
         } else {
-            // let rand = Math.random();
             this.ctx.fillStyle = "black"; 
         }
         this.ctx.closePath();
         this.ctx.fill();
-
-        // this.ctx.addEventListener('click', () =>{
-        //     console.log('you clicked me', this)
-        //     this.ctx.fillStyle = "blue";
-        //     this.ctx.fill();
-        // })
     }
 
     clearColor(){
          this.color = '';
-
     }
 
     setPlayerColor(color = "blue"){
         let that = this;
-        setTimeout(function () { 
+        // setTimeout(function () { 
             that.drawPlayer()
             that.clearColor();
             that.color = that.teamType === 'TEAM_MATCH' ? color : that.generateRandomColor();
             that.ctx.fillStyle = that.color;
             that.ctx.fill();
-            that.ctx.closePath() }, 2000);
-        
+            that.ctx.closePath() 
+        // }, 2000);    
     }
 
     deactivatePlayer(){
@@ -88,10 +80,7 @@ class Player {
         } else {
             return "red";
         }
-    }
-
-
-            
+    }       
 }
 
 
