@@ -16,7 +16,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 300px;
-  font-family: "Quicksand", sans-serif;
 }
 
 .scoreboard_name,

@@ -1,8 +1,5 @@
 const Game = require('./scripts/game.js');
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas'); //canvas setup
     const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
