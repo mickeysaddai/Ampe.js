@@ -13,11 +13,6 @@ class Game {
         this.scoreboard = new Scoreboard();
     }
 
-    startGame(){
-
-    };
-
-
     drawGame(){
     this.teamUnmatch = new Team(this.numberOfPlayers, 'TEAM_UNMATCH', this.ctx);
      this.teamMatch = new Team(this.numberOfPlayers, 'TEAM_MATCH', this.ctx );

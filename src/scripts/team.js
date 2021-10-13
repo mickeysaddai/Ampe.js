@@ -5,11 +5,6 @@ const TEAM_TYPE = {
 };
 
 class Team {
-    //list of players
-    //type of string - match adn unamtch
-    //isDead?()
-    //two teams : Team A, Team B
-
     players;
     teamType;
     numberOfPlayers;
@@ -40,7 +35,6 @@ class Team {
             playerList.push(currentPlayer);
             startingXCoord += 75;
             // currentPlayer.setPlayerColor(color);
-
         }
         this.players = playerList;
         return playerList;
