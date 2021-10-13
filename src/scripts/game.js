@@ -27,20 +27,7 @@ class Game {
      this.teamMatch.createPlayers();
     }
     
-    promptUser(){
-        //privides an option of two colors for using to choose one
-        //once user chooses color //prompts user to pick "Match" or "Unmatched"
-    }
 
-    randomColorGenerator(){
-        //generates a pair of random colors for user to choose from
-    }
-
-    /**
-     * if a team just killed a player, both teams need to start at 0
-     * @param {*} chosenColor 
-     * @returns 
-     */
     makeMove(chosenColor){
         if (this.isGameOver()) {
             return this.finishGame();
@@ -51,20 +38,20 @@ class Game {
         
         this.teamUnmatch.activateCurrentPlayer();
         this.teamMatch.activateCurrentPlayer(chosenColor);
-        const { player , killedStatus } = this.getCurrentRoundWinner()
-        console.log("current winner is", player.teamType);
-        winnerEle.innerText = `Current winner is ${player.teamType}` 
+        const winner = this.getCurrentRoundWinner()
+        console.log("current winner is", winner.teamType);
+        winnerEle.innerText = `Current winner is ${winner.teamType}` 
 
         const { teamMatchScore, teamUnmatchScore }  = this.scoreboard.getCurrentScore()
         teamMatchScoreEle.innerText = teamMatchScore;
         teamUnmatchScoreEle.innerText = teamUnmatchScore;
         console.log("score is ", this.scoreboard.getCurrentScore())
 
-        // if (this.isGameOver()){
-        //     return this.finishGame();
-        // }
+        if (this.isGameOver()){
+            return this.finishGame();
+        }
        
-        if (player.teamType === 'TEAM_MATCH') {
+        if (winner.teamType === 'TEAM_MATCH') {
            this.teamUnmatch.setNextPlayer();
        } else {
            this.teamMatch.setNextPlayer()
