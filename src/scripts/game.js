@@ -5,11 +5,12 @@ class Game {
     numberOfPlayers;
     teamMatch;
     teamUnmatch;
+    scoreboard;
 
-     COLORS = [ "red", "blue", "yellow"]
     constructor(ctx, numberOfPlayers){
         this.ctx = ctx;
         this.numberOfPlayers = numberOfPlayers;
+        this.scoreboard = new Scoreboard();
     }
 
     startGame(){
@@ -35,21 +36,39 @@ class Game {
         //generates a pair of random colors for user to choose from
     }
 
+    /**
+     * if a team just killed a player, both teams need to start at 0
+     * @param {*} chosenColor 
+     * @returns 
+     */
     makeMove(chosenColor){
+        if (this.isGameOver()) {
+            return this.finishGame();
+        }
        const winnerEle = window.document.getElementById('winner-container');
-
+        const teamMatchScoreEle = document.getElementById('team_match_score')
+        const teamUnmatchScoreEle = document.getElementById('team_unmatch_score')
+        
         this.teamUnmatch.activateCurrentPlayer();
         this.teamMatch.activateCurrentPlayer(chosenColor);
-        const winner = this.getCurrentRoundWinner()
-        console.log("current winner is", winner.teamType);
-        winnerEle.innerText = `Current winner is ${winner.teamType}` 
+        const { player , killedStatus } = this.getCurrentRoundWinner()
+        console.log("current winner is", player.teamType);
+        winnerEle.innerText = `Current winner is ${player.teamType}` 
+
+        const { teamMatchScore, teamUnmatchScore }  = this.scoreboard.getCurrentScore()
+        teamMatchScoreEle.innerText = teamMatchScore;
+        teamUnmatchScoreEle.innerText = teamUnmatchScore;
+        console.log("score is ", this.scoreboard.getCurrentScore())
+
+        // if (this.isGameOver()){
+        //     return this.finishGame();
+        // }
        
-        if (winner.teamType === 'TEAM_MATCH') {
+        if (player.teamType === 'TEAM_MATCH') {
            this.teamUnmatch.setNextPlayer();
        } else {
            this.teamMatch.setNextPlayer()
        }
-
     }
 
     getCurrentRoundWinner(){
@@ -57,16 +76,33 @@ class Game {
         console.log("match", this.teamMatch.getCurrentPlayer().color);
         console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
         if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color ){
-            //incremenet scoreboard for tema match
-            // this.teamUnmatch.setNextPlayer();
+            this.scoreboard.updateTeamMatchScore();
+            // console.log("match score is", scoreboard.updateTeamMatchScore())
             return this.teamMatch.getCurrentPlayer();
         
         } else {
+            this.scoreboard.updateTeamUnmatchScore();
+            // console.log("Unmatch score is", updateTeamUnmatchScore())
             //increment score board for unmatch
             // this.teamMatch.setNextPlayer();
             return this.teamUnmatch.getCurrentPlayer();
         }
     }
+
+    isGameOver(){
+        console.log("is over?", this.teamMatch.isLoser(), this.teamUnmatch.isLoser(),  this.teamMatch.isLoser() || this.teamUnmatch.isLoser())
+        return this.teamMatch.isLoser() || this.teamUnmatch.isLoser()
+    }
+
+    finishGame(){
+        const gamOverContainer = document.getElementById("game-over-container");
+        gamOverContainer.style.visibility = 'visible';
+        document.getElementsByClassName('dropdown')[0].style.visibility = 'hidden';
+        const enableStartButton = document.getElementById('start-button').disabled = false;
+ 
+    }
+
+
 
 
 }

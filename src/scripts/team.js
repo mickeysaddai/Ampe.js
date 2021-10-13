@@ -25,8 +25,8 @@ class Team {
     }
 
     getTeamYCoord() {
-        const startingMatchYCoord = 185;
-        const startingUnmatchYCoord = 75;
+        const startingMatchYCoord = 155;
+        const startingUnmatchYCoord = 55;
         return this.teamType === TEAM_TYPE.TEAM_MATCH ? startingMatchYCoord : startingUnmatchYCoord;
     }
 
@@ -67,15 +67,23 @@ class Team {
         const currentPlayer = this.getCurrentPlayer()
         // currentPlayer.deactivatePlayer();
 
-        if (currentPlayer.pos < this.players.length - 1) {
+        if (currentPlayer.pos < this.players.length-1) {
             this.currentPlayerPosition++;
             return this.players[this.currentPlayerPosition];
 
         } else {
             currentPlayer.killPlayer();
-            this.players = this.players.slice(0, this.players.length - 1);
-            this.currentPlayerPosition = 0;
-            return this.getCurrentPlayer()
+            if (this.players.length === 1) {
+                this.players = []
+                console.log("killed last player in ", this.teamType, "isLost ->", this.isLoser())
+                return null
+            } else {
+                this.players = this.players.slice(0, this.players.length - 1);
+                this.currentPlayerPosition = 0;
+                return this.getCurrentPlayer()
+            }
+           
+          
             //    currentPlayer
             //if I won return me
             // if I lost kill me, and return first player pro
@@ -84,7 +92,10 @@ class Team {
         }
     }
 
-    lastPlayer(){
+    resetToFirstPlayer() {}
+
+    isLoser(){
+        return this.players.length === 0;
         
     }
 

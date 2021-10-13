@@ -43,7 +43,7 @@ class Player {
             this.ctx.fillStyle = "pink"; 
             
         } else {
-            this.ctx.fillStyle = "black"; 
+            this.ctx.fillStyle = "aqua";
         }
         this.ctx.closePath();
         this.ctx.fill();
@@ -84,13 +84,16 @@ class Player {
     
     killPlayer(){
         console.log("killing player", this)
-        this.status = STATUS_TYPES.DEAD;
-        this.ctx.beginPath();
-        // this.ctx.globalCompositeOperation = 'destination-out'
-        this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
-        this.ctx.fillStyle = "grey";
-        this.ctx.closePath();
-        this.ctx.fill();   
+        setTimeout(() => {
+            this.status = STATUS_TYPES.DEAD;
+            this.ctx.beginPath();
+            // this.ctx.globalCompositeOperation = 'destination-out'
+            this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
+            this.ctx.fillStyle = "grey";
+            this.ctx.closePath();
+            this.ctx.fill();
+        }, 1000)
+       
     }
 }
 

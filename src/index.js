@@ -3,10 +3,21 @@ const Game = require('./scripts/game.js');
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas'); //canvas setup
     const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
-    canvas.width = 600;
-    canvas.height = 300;
-    // const main = document.getElementById('main')
+    canvas.width = 500;
+    canvas.height = 200;
     console.log('Ampe!!!')
+
+    // const wrapper = document.querySelector('.wrapper');
+    // const grid = document.querySelector('.gridContainer')
+
+    // function addGrid() {
+    //     wrapper.innerHTML += grid.innerHTML;
+    // }
+
+    // addGrid();
+
+
+
     document.getElementsByClassName('dropdown')[0].addEventListener('click', () => {
         document.getElementById("myDropdown").classList.toggle("show");
     })
@@ -15,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('start-button').addEventListener('click', function(){
       console.log('clicked')
-        const numberOfPlayers = prompt('Please enter your number of players')
+        const numberOfPlayers = prompt('Please enter number between 2 - 8')
         const game = new Game(ctx, numberOfPlayers);
         game.drawGame();
         // console.log('You entered ', numberOfPlayers)

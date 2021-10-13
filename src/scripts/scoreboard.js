@@ -1,24 +1,35 @@
+
+
 class Scoreboard {
-    playerMatchScore;
-    playerUnMatchScore;
+    teamMatchScore;
+    teamUnmatchScore;
     constructor(){
-        this.playerMatchScore = 0;
-        this.playerUnMatchScore = 0;
+        this.teamMatchScore = 0;
+        this.teamUnmatchScore = 0;
 
     }
 
-    updatePlayerMatchScore(){
-        this.playerMatchScore ++;
-        return this.playerMatchScore;
+    updateTeamMatchScore(){
+        this.teamMatchScore += 1;
+        // score = document.getElementsByClassName('scoreboard')[2]
+    
+        return this.teamMatchScore;
 
 
     };
 
-    updatePlayerUnMatchScore(){
-        this.playerUnMatchScore ++;
-        return this.playerUnMatchScore;
+    updateTeamUnmatchScore(){
+        this.teamUnmatchScore += 1;
+        return this.teamUnmatchScore;
 
     };
+
+    getCurrentScore() {
+        return { 
+            teamMatchScore: this.teamMatchScore, 
+            teamUnmatchScore: this.teamUnmatchScore
+        }
+    }
     //board - [];
     //team A - arr[0]
     //team B - arr[1];
