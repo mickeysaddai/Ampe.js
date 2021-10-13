@@ -76,12 +76,6 @@ class Team {
                 this.currentPlayerPosition = 0;
                 return this.getCurrentPlayer()
             }
-           
-          
-            //    currentPlayer
-            //if I won return me
-            // if I lost kill me, and return first player pro
-
 
         }
     }

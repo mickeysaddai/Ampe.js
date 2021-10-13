@@ -14,12 +14,7 @@ body {
   border-radius: 50px;
 }
 
-#team_match_score {
-  align-items: center;
-  background-position: initial;
-}
-
-#team_unmatch_score .parent-container {
+.parent-container {
   display: flex;
   flex-direction: row;
   height: 30px;
@@ -43,16 +38,18 @@ body {
 }
 
 #team_match_score {
-  flex: content;
+  padding-left: 60px;
+}
+
+#team_unmatch_score {
+  padding-left: 60px;
 }
 
 .dropbtn {
-  color: white;
-  padding: 15px;
-  font-size: 15px;
-  border: none;
+  display: flex;
+  padding: 5px;
+  font-size: 13px;
   cursor: pointer;
-  height: 10px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
