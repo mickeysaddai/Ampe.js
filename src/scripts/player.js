@@ -83,8 +83,10 @@ class Player {
     }  
     
     killPlayer(){
+        console.log("killing player", this)
         this.status = STATUS_TYPES.DEAD;
         this.ctx.beginPath();
+        // this.ctx.globalCompositeOperation = 'destination-out'
         this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
         this.ctx.fillStyle = "grey";
         this.ctx.closePath();

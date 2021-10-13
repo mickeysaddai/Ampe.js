@@ -5,32 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.scss"
+    <link rel="stylesheet" href="./dist/main.css"/>
     <script src="./dist/main.js"></script> 
     <title>Ampe!!!</title>
 </head>
 
 <body>
- 
-    <canvas id="canvas"></canvas>
-
-    <div class="parent-container">
-        <button id="start-button">Start Game</button>
-    </div>
+    <div id="game"></div>
     
-    <div id="color-selector">
-    </div>
-    
-    <div id="winner-container">
-        <p>winner</p>
-
-    </div>
-
-    <div id="player-container">
-        <p></p>
-    </div>
-
-
     <div class="scoreboard">
         <div class="scoreboard_name">Team Match</div>
         <div class="scoreboard_name">Team Unmatch</div>
@@ -38,6 +20,34 @@
         <div class="scoreboard_score">0</div>
     
     </div>
+    <canvas id="canvas"></canvas>
+
+    <div class="parent-container">
+        <button id="start-button">Start Game</button>
+        <div id="color-selector" style="margin-left: 20px;">
+        </div>
+        <div class="dropdown" style="visibility: hidden;">
+            <button class="dropbtn">Choose Color</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a class="redChoice" href="#home">Red</a>
+                <a class="blueChoice" href="#about">Blue</a>
+            </div>
+        </div>
+        <div id="winner-container" style="margin-left: 20px;">
+            <p>winner</p>
+        
+        </div>
+    </div>
+    
+   
+    
+  
+
+    <div id="player-container">
+        <p></p>
+    </div>
+
+
 
 </body>
 

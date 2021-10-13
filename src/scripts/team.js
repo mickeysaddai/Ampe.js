@@ -47,11 +47,11 @@ class Team {
     }
 
     
-    activateCurrentPlayer(){
+    activateCurrentPlayer(chosenColor){
         const currentPlayer = this.getCurrentPlayer();
         
         if (this.teamType === TEAM_TYPE.TEAM_MATCH){
-            currentPlayer.setPlayerColor("red")
+            currentPlayer.setPlayerColor(chosenColor)
         } else {
             
             currentPlayer.setPlayerColor()
@@ -67,12 +67,15 @@ class Team {
         const currentPlayer = this.getCurrentPlayer()
         // currentPlayer.deactivatePlayer();
 
-        if (currentPlayer.pos < this.players.length) {
+        if (currentPlayer.pos < this.players.length - 1) {
             this.currentPlayerPosition++;
             return this.players[this.currentPlayerPosition];
 
         } else {
-            return currentPlayer.killPlayer();
+            currentPlayer.killPlayer();
+            this.players = this.players.slice(0, this.players.length - 1);
+            this.currentPlayerPosition = 0;
+            return this.getCurrentPlayer()
             //    currentPlayer
             //if I won return me
             // if I lost kill me, and return first player pro

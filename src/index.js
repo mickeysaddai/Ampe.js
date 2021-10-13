@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas'); //canvas setup
     const ctx = canvas.getContext('2d'); //allow us to use built in canvas methods
     canvas.width = 600;
-    canvas.height = 400;
+    canvas.height = 300;
     // const main = document.getElementById('main')
     console.log('Ampe!!!')
+    document.getElementsByClassName('dropdown')[0].addEventListener('click', () => {
+        document.getElementById("myDropdown").classList.toggle("show");
+    })
+
+  
 
     document.getElementById('start-button').addEventListener('click', function(){
       console.log('clicked')
@@ -20,16 +25,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-        const chooseButton = document.createElement('button');
-        chooseButton.innerText = 'Choose Color';
+        // const chooseButton = document.createElement('button');
+        // chooseButton.innerText = 'Choose Color';
 
+        document.getElementsByClassName('dropdown')[0].style.visibility = 'visible'
+        // document.getElementById('dropdown').append(chooseButton);
 
-         document.getElementById('color-selector').append(chooseButton);
-
-        chooseButton.addEventListener('click', function(){
-
-            game.makeMove();
+        const redButton = document.getElementsByClassName('redChoice')[0];
+       
+        redButton.addEventListener('click', () => {
+            game.makeMove('red')
         })
+
+        const blueButton = document.getElementsByClassName('blueChoice')[0];
+
+        blueButton.addEventListener('click', () => {
+            game.makeMove('blue')
+        })
+
+        // chooseButton.addEventListener('click', function(){
+
+        //     game.makeMove();
+        // })
 
 
         // const colors = ["red", "blue"];
@@ -39,6 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     
 })
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
 
 
