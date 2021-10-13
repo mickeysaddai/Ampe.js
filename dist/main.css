@@ -17,6 +17,18 @@ body {
 
 #start-button {
   background-color: tomato;
+  box-shadow: 3px 4px 0px 0px #899599;
+  background: linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
+  border-radius: 15px;
+  border: 1px solid #d16319;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 17px;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #da501a;
 }
 
 .parent-container {
@@ -51,10 +63,19 @@ body {
 }
 
 .dropbtn {
-  display: flex;
-  padding: 5px;
-  font-size: 13px;
+  background-color: tomato;
+  box-shadow: 3px 4px 0px 0px #899599;
+  background: linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
+  border-radius: 15px;
+  border: 1px solid #d16319;
+  display: inline-block;
   cursor: pointer;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 17px;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #da501a;
 }
 
 .dropbtn:hover, .dropbtn:focus {
