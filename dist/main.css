@@ -6,12 +6,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/african-sunset-theme-painting-rakhi-revi-kumar.jpg);
 }
 
 #canvas {
   border: 2px solid grey;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
   border-radius: 50px;
+}
+
+#start-button {
+  background-color: tomato;
 }
 
 .parent-container {
