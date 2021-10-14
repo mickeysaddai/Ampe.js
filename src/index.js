@@ -1,8 +1,8 @@
 const Game = require('./scripts/game.js');
 
 document.addEventListener("DOMContentLoaded", () => {
+    launchModal()
     const canvas = document.getElementById('canvas'); //canvas setup
-    ; //allow us to use built in canvas methods
     canvas.width = 500;
     canvas.height = 200;
     console.log('Ampe!!!')
@@ -19,13 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
+
 function launchModal() {
-    var modal = document.getElementById("myModal");
+    const modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close")[0];
+    const beginButton = document.getElementById('beginButton');
+    beginButton.disabled = true;
 
     // When the user clicks the button, open the modal 
 
@@ -36,16 +39,53 @@ function launchModal() {
     span.onclick = function () {
         modal.style.display = "none";
     }
+    const contestantInput = document.getElementById('contestantInput');
+    contestantInput.addEventListener('keydown', (event) => {
+        const value = event.target.value;
+        if (value > 0 || value < 8) {
+            contestantInput.value = value
+            console.log('enabled button')
+            beginButton.disabled = false
 
-    // When the user clicks anywhere outside of the modal, close it
+        } else {
+            beginButton.disabled = true
+            console.log('diasbked button')
+
+        }
+        // contestantInput.value = validValue 
+    })
+
+    beginButton.addEventListener('click', () => {
+        modal.style.display = "none";
+        initGame(contestantInput.value)
+    })
 }
 
-function initGame() {
+    // When the user clicks anywhere outside of the modal, close it
+
+function muteOrUnmute() {
+    const ampeSong = document.getElementById("ampeSong");
+    const muteButton = document.getElementById('mute');
+
+    if (ampeSong.muted) {
+        ampeSong.muted = false;
+        muteButton.innerHTML = `<i class="fas fa-volume-up"></i>`
+    } else {
+        ampeSong.muted = true;
+        muteButton.innerHTML =`<i class="fas fa-volume-mute"></i>`
+    }
+}
+
+function initGame(numberOfPlayers ) {
     if (window.__gameOver) {
         return window.location.reload()
     }
+    const audio = document.getElementById("ampeSong");
+   audio.play()
+   const muteButton = document.getElementById('mute')
+   muteButton.style.visibility = 'visible'
+   muteButton.addEventListener('click', muteOrUnmute)
     const ctx = canvas.getContext('2d')
-    const numberOfPlayers = prompt('Please enter number between 2 - 8')
     const game = new Game(ctx, numberOfPlayers);
     game.drawGame();
     disabled = document.getElementById('start-button').disabled = true;
@@ -59,10 +99,10 @@ function initGame() {
     document.getElementsByClassName('dropdown')[0].style.visibility = 'visible'
     // document.getElementById('dropdown').append(chooseButton);
 
-    const yellowButton = document.getElementsByClassName('redChoice')[0];
+    const yellowButton = document.getElementsByClassName('yellowChoice')[0];
 
     yellowButton.addEventListener('click', () => {
-        game.makeMove('red')
+        game.makeMove('yellow')
     })
 
     const blueButton = document.getElementsByClassName('blueChoice')[0];

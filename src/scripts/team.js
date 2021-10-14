@@ -1,4 +1,3 @@
-
 const Player = require('./player');
 const TEAM_TYPE = {
     TEAM_MATCH: 'TEAM_MATCH',
@@ -43,6 +42,11 @@ class Team {
 
 
     activateCurrentPlayer({ chosenColor, shouldReset = false }) {
+        this.resetInactivePlayers()
+        if (shouldReset) {
+            // reset current player
+            this.getCurrentPlayer().drawPlayer()
+        }
         let currentPlayer = shouldReset ? this.resetToFirstPlayer() : this.getCurrentPlayer();
 
         if (this.teamType === TEAM_TYPE.TEAM_MATCH) {
@@ -60,6 +64,7 @@ class Team {
     setNextPlayer() { //change to set next player
         let killedStatus = false;
         const currentPlayer = this.getCurrentPlayer()
+        this.resetInactivePlayers()
         // currentPlayer.deactivatePlayer();
 
         if (currentPlayer.pos < this.players.length - 1) {
@@ -79,6 +84,13 @@ class Team {
                 return killedStatus;
             }
 
+        }
+    }
+
+    resetInactivePlayers() {
+        for (let i = 0; i < this.currentPlayerPosition; i++) {
+            console.log("resettting players for team", this.teamType)
+            this.players[i].drawPlayer()
         }
     }
 

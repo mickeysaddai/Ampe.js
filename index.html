@@ -15,6 +15,7 @@
 
 <body>
 
+
 <script>
     function play() {
         var audio = document.getElementById("audio");
@@ -48,6 +49,11 @@ src="https://drive.google.com/file/d/1tX3bVhMA8DoUyZyHZeJNL2LbloybnIIy/preview">
         </div> 
     
     </div> 
+
+    <div id="winner-container" style="visibility: hidden;">
+        <p></p>
+    
+    </div>
     <div id="game-over-container" style="visibility: hidden;">
         <h2>Game Over</h2>
     </div>
@@ -55,35 +61,47 @@ src="https://drive.google.com/file/d/1tX3bVhMA8DoUyZyHZeJNL2LbloybnIIy/preview">
 
     <div class="parent-container">
         <button id="start-button">Start Game</button>
+
         <div id="color-selector" style="margin-left: 20px;">
         </div>
 
         <div class="dropdown" style="visibility: hidden;">
             <button class="dropbtn">Choose Color</button>
             <div id="myDropdown" class="dropdown-content">
-                <a class="redChoice" href="#home">Yellow</a>
+                <a class="yellowChoice" href="#home">Yellow</a>
                 <a class="blueChoice" href="#about">Blue</a>
             </div>
         </div>
-
-        <div id="winner-container" style="margin-left: 20px;">
-            <p></p>
-        
-        </div>
-    </div>
-    </div>
-
-    <!--
-
-        <button>
-            <a href="https://github.com/mickeysaddai/Ampe.js.git">github</a>
-    
+        <audio loop id="ampeSong" src="src/ampe.mp3" type="audio/mpeg"></audio>
+        <button id="mute" style="visibility: hidden;"> 
+            <i class="fas fa-volume-mute"></i>
         </button>
-        <a href="url">linkedIn</a> 
-    -->
+    </div>
+    </div>
+
+    <div id="myModal" class="modal">
     
-   
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Welcome To Ampe.JS</h2>
+            </div>
+            <div class="modal-body">
+                <p>Enter your contestants </p>
     
+                <div id="contestantInputContainer">
+                    <input type="number" name="" id="contestantInput" value="">
+                    <button id="beginButton">Begin game</button>
+                </div>
+    
+            </div>
+            <!-- <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div> -->
+        </div>
+    
+    </div>
   
 
     <div id="player-container">
@@ -92,10 +110,15 @@ src="https://drive.google.com/file/d/1tX3bVhMA8DoUyZyHZeJNL2LbloybnIIy/preview">
 
     <img src="" alt="">
 
-<div>
-    <a href="https://github.com"> <i class="fab fa-github" style="color: white;"></i> </a>
-    <a href="linkedin.com/in/michelle-addai-5626a6106"> <i class="fab fa-linkedin-in" ></i> </a>
-</div>
+
+
+    <footer>
+        
+            <a href="https://github.com"><i class="fab fa-github"" style="margin-right: 10px;"></i> </a>
+            <a href=" linkedin.com/in/michelle-addai-5626a6106"><i class="fab fa-linkedin-in" style="margin-left: 10px;"></i> </a>
+        
+    
+    </footer>
 
 </body>
 
