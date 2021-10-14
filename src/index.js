@@ -108,7 +108,7 @@ function initGame(numberOfPlayers ) {
     const blueButton = document.getElementsByClassName('blueChoice')[0];
 
     blueButton.addEventListener('click', () => {
-        game.makeMove('blue')
+        game.makeMove('chocolate')
     })
 }
 

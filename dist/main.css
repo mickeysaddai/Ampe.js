@@ -12,9 +12,9 @@ body {
 }
 
 #canvas {
-  margin-top: -30px;
+  margin-top: -50px;
   border: 2px solid grey;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(194, 15, 15, 0.45);
   border-radius: 50px;
 }
 
@@ -168,6 +168,7 @@ body {
   background-color: #fefefe;
   margin: auto;
   padding: 0;
+  border-radius: 15px;
   border: 1px solid #888;
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -215,8 +216,9 @@ body {
 
 .modal-header {
   padding: 2px 16px;
+  border-radius: 15px;
   background-color: #9b4e42f7;
-  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/african-sunset-theme-painting-rakhi-revi-kumar.jpg");
+  background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
   color: white;
 }
 
@@ -236,4 +238,11 @@ footer {
   bottom: 0;
   padding: 50px;
   right: 0;
+}
+
+#mute {
+  font-size: 20px;
+  background: linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
+  margin-left: 20px;
+  margin-top: 3px;
 }

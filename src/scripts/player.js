@@ -53,7 +53,7 @@ class Player {
          this.color = '';
     }
 
-    setPlayerColor(color = "blue"){
+    setPlayerColor(color = "chocolate"){
         let that = this;
         // setTimeout(function () { 
             that.drawPlayer()
@@ -76,7 +76,7 @@ class Player {
         const rand = Math.random();
 
         if (rand < 0.5){
-            return "blue"
+            return "chocolate"
         } else {
             return "yellow";
         }
