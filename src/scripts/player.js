@@ -40,10 +40,10 @@ class Player {
         this.ctx.beginPath();
         this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
         if(this.teamType === 'TEAM_MATCH'){
-            this.ctx.fillStyle = "pink"; 
+            this.ctx.fillStyle = "white"; 
             
         } else {
-            this.ctx.fillStyle = "aqua";
+            this.ctx.fillStyle = "white";
         }
         this.ctx.closePath();
         this.ctx.fill();
@@ -78,7 +78,7 @@ class Player {
         if (rand < 0.5){
             return "blue"
         } else {
-            return "red";
+            return "yellow";
         }
     }  
     

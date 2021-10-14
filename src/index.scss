@@ -6,12 +6,11 @@ body {
   align-items: center;
   height: 100%;
   background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/african-sunset-theme-painting-rakhi-revi-kumar.jpg);
-
-
  
 }
 
 #canvas {
+    margin-top: -20px;
 
     border: 2px solid grey;  
 //       width:400px;
@@ -30,7 +29,7 @@ body {
 	cursor:pointer;
 	color:black;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size:17px;
+	font-size:15px;
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #da501a;
@@ -55,33 +54,34 @@ body {
 
 }
 .scoreboard_name {
+      color: white;
     font-weight: bold;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #team_match_score {
     padding-left: 60px;
+    color: white;
+    
   
 }
 
 #team_unmatch_score  {
     padding-left: 60px;
+    color: white;
 }
 
 .dropbtn {
-//   display: flex;
-//   padding: 5px;
-//   font-size: 13px;
-//   cursor: pointer;
     background-color: tomato;
-    box-shadow: 3px 4px 0px 0px #899599;
+    box-shadow: 3px 3px 0px 0px #899599;
 	background:linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
 	border-radius:15px;
-	border:1px solid #d16319;
+	border: 0px solid #e9d5c8;
 	display:inline-block;
 	cursor:pointer;
 	color:black;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size:17px;
+	font-size:15px;
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #da501a;
@@ -121,10 +121,15 @@ body {
 
 .show {display: block;}
 
-// .redChoice {
-//     background-color: red;
+// #game-over-container{
+// font-family: 'Tangerine', serif;
+//   font-size: 48px;
+//   text-shadow: 4px 4px 4px #aaa;
 // }
 
-// .blueChoice {
-//     background-color: blue;
-// }
+
+.fab fa-github {
+    color: white;
+    
+
+}

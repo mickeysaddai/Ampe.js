@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // const chooseButton = document.createElement('button');
         // chooseButton.innerText = 'Choose Color';
 
-        document.getElementsByClassName('dropdown')[0].style.visibility = 'visible'
+        document.getElementsByClassName('dropdown')[0].style.visibility = 'visible';
         // document.getElementById('dropdown').append(chooseButton);
 
-        const redButton = document.getElementsByClassName('redChoice')[0];
+        const yellowButton = document.getElementsByClassName('redChoice')[0];
        
-        redButton.addEventListener('click', () => {
-            game.makeMove('red')
+        yellowButton.addEventListener('click', () => {
+            game.makeMove('yellow')
         })
 
         const blueButton = document.getElementsByClassName('blueChoice')[0];
