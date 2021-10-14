@@ -86,13 +86,7 @@ function initGame(numberOfPlayers ) {
     disabled = document.getElementById('start-button').disabled = true;
 
 
-
-
-    // const chooseButton = document.createElement('button');
-    // chooseButton.innerText = 'Choose Color';
-
     document.getElementsByClassName('dropdown')[0].style.visibility = 'visible'
-    // document.getElementById('dropdown').append(chooseButton);
 
     const yellowButton = document.getElementsByClassName('yellowChoice')[0];
 

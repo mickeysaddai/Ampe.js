@@ -1,5 +1,5 @@
 
-const STATUS_TYPES = { //enum
+const STATUS_TYPES = { 
     ACTIVE : 'ACTIVE',
     INACTIVE: 'INACTIVE',
     DEAD: 'DEAD'
@@ -9,9 +9,9 @@ class Player {
     pos;
     color;
     status;
-    ctx; // tie this canvas to the window instead of passing it down each time 
-    xCoord // xpositionm
-    yCoord // y position
+    ctx; 
+    xCoord;
+    yCoord;
     teamType;
     
     constructor(pos,ctx, xCoord, yCoord, teamType){
@@ -55,14 +55,12 @@ class Player {
 
     setPlayerColor(color = "chocolate"){
         let that = this;
-        // setTimeout(function () { 
             that.drawPlayer()
             that.clearColor();
             that.color = that.teamType === 'TEAM_MATCH' ? color : that.generateRandomColor();
             that.ctx.fillStyle = that.color;
             that.ctx.fill();
-            that.ctx.closePath() 
-        // }, 2000);    
+            that.ctx.closePath()    
     }
 
     deactivatePlayer(){
@@ -87,7 +85,6 @@ class Player {
         setTimeout(() => {
             this.status = STATUS_TYPES.DEAD;
             this.ctx.beginPath();
-            // this.ctx.globalCompositeOperation = 'destination-out'
             this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
             this.ctx.fillStyle = "black";
             this.ctx.closePath();

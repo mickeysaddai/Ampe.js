@@ -31,6 +31,8 @@ class Game {
      * @param {*} chosenColor 
      * @returns 
      */
+
+    
     makeMove(chosenColor) {
         if (this.isGameOver()) {
             return this.finishGame();
@@ -67,14 +69,10 @@ class Game {
         console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
         if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color) {
             this.scoreboard.updateTeamMatchScore();
-            // console.log("match score is", scoreboard.updateTeamMatchScore())
             return this.teamMatch.getCurrentPlayer();
 
         } else {
             this.scoreboard.updateTeamUnmatchScore();
-            // console.log("Unmatch score is", updateTeamUnmatchScore())
-            //increment score board for unmatch
-            // this.teamMatch.setNextPlayer();
             return this.teamUnmatch.getCurrentPlayer();
         }
     }
@@ -93,17 +91,7 @@ class Game {
         enableStartButton.innerText = "Reset Game"
         window.__gameOver = true;
     }
-
-
-
-
 }
-//Random color generator
-//Startgame - prompt user to eneter number of players -> class team
-//Round # --> choose color for active player --> disable color --> start countdonw --> bounce? -- > reveeal --> print score
-//timer
-//gameOver --> when dead player === teamSize
-//puts Player #{name} wins
-//
+
 
 module.exports = Game;

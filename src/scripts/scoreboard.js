@@ -11,7 +11,6 @@ class Scoreboard {
 
     updateTeamMatchScore(){
         this.teamMatchScore += 1;
-        // score = document.getElementsByClassName('scoreboard')[2]
     
         return this.teamMatchScore;
 
@@ -30,13 +29,6 @@ class Scoreboard {
             teamUnmatchScore: this.teamUnmatchScore
         }
     }
-    //board - [];
-    //team A - arr[0]
-    //team B - arr[1];
-    //increase Team A
-    // increas Team B
-    //getWinenr method
-
 
 }
 
