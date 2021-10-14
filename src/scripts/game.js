@@ -14,6 +14,7 @@ class Game {
         this.numberOfPlayers = numberOfPlayers;
         this.scoreboard = new Scoreboard();
         this.shouldReset = false;
+
     }
 
     drawGame() {

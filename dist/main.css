@@ -275,10 +275,6 @@ footer {
   margin-top: 3px;
 }
 
-h2 {
-  margin-left: 220px;
-}
-
 #contestantInput {
   background-color: white;
 }
@@ -292,4 +288,9 @@ input[type=text] {
   border-width: 3px;
   border-radius: 10px;
   border-color: cornflowerblue;
+}
+
+#winner-container {
+  font-size: 20px;
+  color: white;
 }

@@ -3,7 +3,7 @@ const Game = require('./scripts/game.js');
 document.addEventListener("DOMContentLoaded", () => {
     launchModal()
     const canvas = document.getElementById('canvas'); //canvas setup
-    canvas.width = 500;
+    canvas.width = 700;
     canvas.height = 200;
     console.log('Ampe!!!')
 
