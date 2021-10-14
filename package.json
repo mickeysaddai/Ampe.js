@@ -1,7 +1,7 @@
 {
   "name": "ampe_js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ampe.js simulates the real life African game.Instructions are shown on the game modal",
   "main": "index.js",
   "browserslist": [
     "defaults"
@@ -12,7 +12,7 @@
     "build": "webpack --mode=production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michelle Addai",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.15.8",

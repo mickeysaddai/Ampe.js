@@ -7,13 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.height = 200;
     console.log('Ampe!!!')
 
-
-
+    
     document.getElementsByClassName('dropdown')[0].addEventListener('click', () => {
         document.getElementById("myDropdown").classList.toggle("show");
     })
-
-
 
     document.getElementById('start-button').addEventListener('click', initGame)
 
@@ -49,10 +46,9 @@ function launchModal() {
 
         } else {
             beginButton.disabled = true
-            console.log('diasbked button')
+            console.log('diasbled button')
 
         }
-        // contestantInput.value = validValue 
     })
 
     beginButton.addEventListener('click', () => {
@@ -61,7 +57,6 @@ function launchModal() {
     })
 }
 
-    // When the user clicks anywhere outside of the modal, close it
 
 function muteOrUnmute() {
     const ampeSong = document.getElementById("ampeSong");
@@ -110,21 +105,4 @@ function initGame(numberOfPlayers ) {
     blueButton.addEventListener('click', () => {
         game.makeMove('chocolate')
     })
-}
-
-// function createPlayer(xCoord = 100, yCoord = 75) { //for a single player
-//     // ctx.clearRect(0, 0, canvas.width, canvas.height)
-//     ctx.strokeRect(0, 0, canvas.width, canvas.height)
-//     // ctx.fillRect(20, 200, 100, 100)
-
-//     ctx.beginPath();
-//     ctx.arc(xCoord, yCoord, 20, 0, 2 * Math.PI);
-//     ctx.stroke();
-
-// }
-
-
-
-module.exports = {
-    initGame: initGame
 }
