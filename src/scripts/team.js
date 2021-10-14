@@ -1,3 +1,4 @@
+
 const Player = require('./player');
 const TEAM_TYPE = {
     TEAM_MATCH: 'TEAM_MATCH',
@@ -8,9 +9,9 @@ class Team {
     players;
     teamType;
     numberOfPlayers;
-    ctx;   
+    ctx;
     currentPlayerPosition;
-     
+
     constructor(numberOfPlayers, teamType, ctx) {
         this.numberOfPlayers = numberOfPlayers;
         this.teamType = teamType;
@@ -30,7 +31,7 @@ class Team {
         let playerList = [];
         for (let i = 0; i < this.numberOfPlayers; i++) {
             // console.log(startingXCoord, this.getTeamYCoord())
-            const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord(),this.teamType);
+            const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord(), this.teamType);
             currentPlayer.drawPlayer();
             playerList.push(currentPlayer);
             startingXCoord += 75;
@@ -40,51 +41,55 @@ class Team {
         return playerList;
     }
 
-    
-    activateCurrentPlayer(chosenColor){
-        const currentPlayer = this.getCurrentPlayer();
-        
-        if (this.teamType === TEAM_TYPE.TEAM_MATCH){
+
+    activateCurrentPlayer({ chosenColor, shouldReset = false }) {
+        let currentPlayer = shouldReset ? this.resetToFirstPlayer() : this.getCurrentPlayer();
+
+        if (this.teamType === TEAM_TYPE.TEAM_MATCH) {
             currentPlayer.setPlayerColor(chosenColor)
         } else {
-            
             currentPlayer.setPlayerColor()
         }
     }
-    
-    getCurrentPlayer(){
+
+    getCurrentPlayer() {
         return this.players[this.currentPlayerPosition];
-        
+
     }
 
     setNextPlayer() { //change to set next player
+        let killedStatus = false;
         const currentPlayer = this.getCurrentPlayer()
         // currentPlayer.deactivatePlayer();
 
-        if (currentPlayer.pos < this.players.length-1) {
+        if (currentPlayer.pos < this.players.length - 1) {
             this.currentPlayerPosition++;
-            return this.players[this.currentPlayerPosition];
+            return killedStatus
 
         } else {
             currentPlayer.killPlayer();
+            killedStatus = true;
             if (this.players.length === 1) {
                 this.players = []
                 console.log("killed last player in ", this.teamType, "isLost ->", this.isLoser())
-                return null
+                return killedStatus
             } else {
                 this.players = this.players.slice(0, this.players.length - 1);
-                this.currentPlayerPosition = 0;
-                return this.getCurrentPlayer()
+                this.resetToFirstPlayer()
+                return killedStatus;
             }
 
         }
     }
 
-    resetToFirstPlayer() {}
+    resetToFirstPlayer() {
+        this.currentPlayerPosition = 0;
+        return this.getCurrentPlayer()
+    }
 
-    isLoser(){
+    isLoser() {
         return this.players.length === 0;
-        
+
     }
 
 
