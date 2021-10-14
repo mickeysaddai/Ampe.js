@@ -63,11 +63,13 @@ body {
 #team_match_score {
   padding-left: 60px;
   color: white;
+  font-size: 20px;
 }
 
 #team_unmatch_score {
   padding-left: 60px;
   color: white;
+  font-size: 20px;
 }
 
 .dropbtn {
@@ -138,6 +140,11 @@ body {
   color: red;
   padding-right: 300px;
   font-size: 30px;
+  -webkit-transition: opacity 3s ease-in;
+  -moz-transition: opacity 3s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
 }
 
 #winner-container {
