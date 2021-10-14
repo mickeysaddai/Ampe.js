@@ -112,16 +112,18 @@ function initGame(numberOfPlayers ) {
     })
 }
 
-function createPlayer(xCoord = 100, yCoord = 75) { //for a single player
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.strokeRect(0, 0, canvas.width, canvas.height)
-    // ctx.fillRect(20, 200, 100, 100)
+// function createPlayer(xCoord = 100, yCoord = 75) { //for a single player
+//     // ctx.clearRect(0, 0, canvas.width, canvas.height)
+//     ctx.strokeRect(0, 0, canvas.width, canvas.height)
+//     // ctx.fillRect(20, 200, 100, 100)
 
-    ctx.beginPath();
-    ctx.arc(xCoord, yCoord, 20, 0, 2 * Math.PI);
-    ctx.stroke();
+//     ctx.beginPath();
+//     ctx.arc(xCoord, yCoord, 20, 0, 2 * Math.PI);
+//     ctx.stroke();
 
-}
+// }
+
+
 
 module.exports = {
     initGame: initGame

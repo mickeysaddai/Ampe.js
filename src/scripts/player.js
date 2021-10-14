@@ -89,7 +89,7 @@ class Player {
             this.ctx.beginPath();
             // this.ctx.globalCompositeOperation = 'destination-out'
             this.ctx.arc(this.xCoord, this.yCoord, 20, 0, 2 * Math.PI);
-            this.ctx.fillStyle = "grey";
+            this.ctx.fillStyle = "black";
             this.ctx.closePath();
             this.ctx.fill();
         }, 1000)
