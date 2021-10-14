@@ -164,8 +164,9 @@ body {
 
 /* Modal Content */
 .modal-content {
+  background-repeat: no-repeat;
   position: relative;
-  background-color: #fefefe;
+  color: #d6cdcd;
   margin: auto;
   padding: 0;
   border-radius: 15px;
@@ -176,6 +177,10 @@ body {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Add Animation */
@@ -232,6 +237,19 @@ body {
   color: white;
 }
 
+#beginButton {
+  background-color: #68bcec;
+  background: linear-gradient(to bottom, #31afc5 5%, #615b61 100%);
+  border-radius: 15px;
+  border: 1px solid #0cb8ec;
+  display: inline-block;
+  cursor: pointer;
+  color: whitesmoke;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+  padding: 7px 25px;
+}
+
 footer {
   display: block;
   position: fixed;
@@ -245,4 +263,12 @@ footer {
   background: linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
   margin-left: 20px;
   margin-top: 3px;
+}
+
+h2 {
+  margin-left: 250px;
+}
+
+#contestantInput {
+  background-color: white;
 }
