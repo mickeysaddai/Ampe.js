@@ -39,8 +39,8 @@
     
     </div> 
 
-    <div id="winner-container" style="visibility: hidden;">
-        <p></p>
+    <div id="winner-container">
+        <p> </p>
     
     </div>
     <div id="game-over-container" style="visibility: hidden;">
@@ -76,17 +76,22 @@
                 <span class="close">&times;</span>
                 <h2>Welcome To Ampe.JS</h2>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="overflow: scroll;">
                 <h1>Instructions</h1>
-                <p>Ampe.js is designed to be played against computer. The player wins points for when their chosen color matches the computer's randomly generated color. 
-                    For every point won, the winning player proceeds to play with their next opponent. The last player of the opponent's team gets killed when they lose their turn (grey).
-                    The round starts again and continues until all the players of an opponent's team are killed. The remaining team standing becomes the WINNER.
+                <p>Ampe.js is designed to be played against computer. 
+            
                 </p>
+                <p>The player wins points for when their chosen color matches the computer's randomly generated color.
+                    For every point won, the winning player proceeds to play with their next opponent. The last player of the opponent's
+                    team gets killed when they lose their turn(indicated by grey).</p>
+                    
+                <p>The round starts again and continues until all the players of an opponent's team are killed. The remaining team standing
+                    becomes the WINNER.</p>
 
-                <p>Enter your contestants </p>
+                <p> <strong>Enter the number of your contestants</strong></p>
     
                 <div id="contestantInputContainer">
-                    <input type="number" name="" id="contestantInput" value="">
+                    <input type="text" name="" id="contestantInput" value="">
                     <button id="beginButton">Begin game</button>
                 </div>
     

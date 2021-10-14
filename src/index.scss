@@ -5,17 +5,15 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-//   background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/african-sunset-theme-painting-rakhi-revi-kumar.jpg);
-// background-image: url(https://images.unsplash.com/photo-1535083783855-76ae62b2914e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFmcmljYW4lMjBzYWZhcml8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
-//   background-image: url(https://images.unsplash.com/photo-1614531341773-3bff8b7cb3fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80);
-background-image: url(https://images.unsplash.com/photo-1602685234860-3d38ee425ae8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-image: url(https://images.unsplash.com/photo-1495571758719-6ec1e876d6ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+// background-image: url(https://images.unsplash.com/photo-1602685234860-3d38ee425ae8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
 background-repeat: no-repeat;
-  background-size: 1500px;
+  background-size: cover;
 
 }
 
 #canvas {
-    margin-top: -50px;
+    margin-top: 30px;
     border: 2px solid grey;  
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(194, 15, 15, 0.45);
   border-radius:50px;
@@ -59,8 +57,10 @@ background-repeat: no-repeat;
       color: white;
     font-weight: bold;
     border-bottom: 1px solid;
+    font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 #team_match_score {
     padding-left: 60px;
     color: white;
@@ -142,7 +142,8 @@ background-repeat: no-repeat;
   
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     // font-style: italic;
-    color:whitesmoke;
+    color:red;
+    padding-right: 300px;
 
     font-size: 30px;
 }
@@ -222,6 +223,7 @@ p {
   padding: 2px 16px;
   border-radius:15px;
   background-color: #9b4e42f7;
+  
   background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
 //   background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/african-sunset-theme-painting-rakhi-revi-kumar.jpg');
   color: white;
@@ -270,4 +272,19 @@ h2{
 #contestantInput{
     background-color:white;
     
+}
+
+#winner-container{
+    margin-top: 30px;
+    color: black;
+}
+
+
+input[type=text] {
+    border-width: 5px;
+    //  border-radius:50px;
+       border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1
+//   padding:10px;
+//   border:0;
+//   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
