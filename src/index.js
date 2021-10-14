@@ -88,10 +88,15 @@ function initGame(numberOfPlayers ) {
 
     document.getElementsByClassName('dropdown')[0].style.visibility = 'visible'
 
-    const yellowButton = document.getElementsByClassName('yellowChoice')[0];
+    const yellowOption = document.getElementsByClassName('yellowChoice')[0];
 
-    yellowButton.addEventListener('click', () => {
+    yellowOption.addEventListener('click', () => {
+         // clicked = document.getElementById('clickButton')
+        // clicked.play()
+
         game.makeMove('yellow')
+       
+        
     })
 
     const blueButton = document.getElementsByClassName('blueChoice')[0];
