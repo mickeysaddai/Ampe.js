@@ -27,7 +27,7 @@ class Team {
     }
 
     createPlayers() {
-        let startingXCoord = 100;
+        let startingXCoord = 75;
         let playerList = [];
         for (let i = 0; i < this.numberOfPlayers; i++) {
             // console.log(startingXCoord, this.getTeamYCoord())
