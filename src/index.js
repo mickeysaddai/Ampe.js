@@ -119,4 +119,3 @@ function initGame(numberOfPlayers ) {
     })
 }
 
-

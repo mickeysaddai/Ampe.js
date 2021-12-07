@@ -32,10 +32,9 @@ class Team {
         for (let i = 0; i < this.numberOfPlayers; i++) {
             // console.log(startingXCoord, this.getTeamYCoord())
             const currentPlayer = new Player(i, this.ctx, startingXCoord, this.getTeamYCoord(), this.teamType);
-            currentPlayer.drawPlayer();
+            currentPlayer.drawPlayer()
             playerList.push(currentPlayer);
-            startingXCoord += 75;
-            // currentPlayer.setPlayerColor(color);
+        
         }
         this.players = playerList;
         return playerList;
@@ -62,11 +61,10 @@ class Team {
 
     }
 
-    setNextPlayer() { //change to set next player
+    setNextPlayer() { 
         let killedStatus = false;
         const currentPlayer = this.getCurrentPlayer()
         this.resetInactivePlayers()
-        // currentPlayer.deactivatePlayer();
 
         if (currentPlayer.pos < this.players.length - 1) {
             this.currentPlayerPosition++;
