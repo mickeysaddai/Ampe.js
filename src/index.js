@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById('canvas'); 
     canvas.width = 680;
     canvas.height = 200;
-    console.log('Ampe!!!')
+   
 
     
     document.getElementsByClassName('dropdown')[0].addEventListener('click', () => {
@@ -60,7 +60,7 @@ function launchModal(skipInput = false) {
        const choosePlayerButtons =  document.querySelectorAll('[name="age"]')
         let selectedValue = null;
              choosePlayerButtons.forEach(button => {
-                 console.log("looping")
+                //  console.log("looping")
 
            if (button.checked === true){
                selectedValue = button['value']
