@@ -25,7 +25,7 @@ function launchModal() {
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
     const beginButton = document.getElementById('beginButton');
-    beginButton.disabled = true;
+   
 
     // When the user clicks the button, open the modal 
 
@@ -36,24 +36,34 @@ function launchModal() {
     span.onclick = function () {
         modal.style.display = "none";
     }
-    const contestantInput = document.getElementById('contestantInput');
-    contestantInput.addEventListener('keydown', (event) => {
-        const value = event.target.value;
-        if (value > 0 || value < 8) {
-            contestantInput.value = value
-            console.log('enabled button')
-            beginButton.disabled = false
+    // const contestantInput = document.getElementById('contestantInput');
+    // contestantInput.addEventListener('keydown', (event) => {
+    //     const value = event.target.value;
+    //     if (value > 0 || value < 8) {
+    //         contestantInput.value = value
+    //         console.log('enabled button')
+    //         beginButton.disabled = false
 
-        } else {
-            beginButton.disabled = true
-            console.log('diasbled button')
+    //     } else {
+    //         beginButton.disabled = true
+    //         console.log('diasbled button')
 
-        }
-    })
-
+    //     }
+    // })
     beginButton.addEventListener('click', () => {
+        console.log("hello world")
+       const choosePlayerButtons =  document.querySelectorAll('[name="age"]')
+        let selectedValue = null;
+             choosePlayerButtons.forEach(button => {
+                 console.log("looping")
+
+           if (button.checked === true){
+               selectedValue = button['value']
+           }
+
+       })
         modal.style.display = "none";
-        initGame(contestantInput.value)
+        initGame(selectedValue)
     })
 }
 
