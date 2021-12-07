@@ -79,10 +79,10 @@ function muteOrUnmute() {
 
     if (ampeSong.muted) {
         ampeSong.muted = false;
-        muteButton.innerHTML = `<i class="fas fa-volume-up"></i>`
+        muteButton.innerHTML = `<i class="fas fa-volume-mute"></i>`
     } else {
         ampeSong.muted = true;
-        muteButton.innerHTML =`<i class="fas fa-volume-mute"></i>`
+        muteButton.innerHTML =`<i class="fas fa-volume-up"></i>`
     }
 }
 
