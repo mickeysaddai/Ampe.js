@@ -282,9 +282,9 @@ margin-left: 20px;
 margin-top: 3px;
 }
 
-// h2{
-//     margin-left: 250px;
-// }
+h2{
+  margin-left: 30%;
+}
 
 #contestantInput{
     background-color:white;
@@ -322,4 +322,17 @@ input[type=text] {
   color: white;
   margin-left: 50%;
   
+}
+
+.teamUnmatch{
+  padding-left: 5%;
+  color:white;
+}
+
+.teamMatch{
+  padding-left: 5%;
+
+  color: white;
+  margin-top: -4.5%;
+
 }
