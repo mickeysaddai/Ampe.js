@@ -88,6 +88,7 @@ class Game {
         document.getElementsByClassName('dropdown')[0].style.visibility = 'hidden';
         const enableStartButton = document.getElementById('start-button');
         enableStartButton.disabled = false;
+        enableStartButton.style.visibility = "visible";
         enableStartButton.innerText = "Reset Game"
         window.__gameOver = true;
     }

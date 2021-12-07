@@ -14,44 +14,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('start-button').addEventListener('click', initGame)
 
+    document.getElementsByClassName("instructions")[0].addEventListener('click', () => {
+        console.log("clickedMe")
+        const skipInput = true;
+        launchModal(skipInput)
+
+    })
+
 })
 
 
-function launchModal() {
+function launchModal(skipInput = false) {
     const modal = document.getElementById("myModal");
-
+    
     // Get the button that opens the modal
-
+    
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
-    const beginButton = document.getElementById('beginButton');
-   
-
+    const closeButton = document.getElementById("closeModal")
+    closeButton.style.visibility = 'hidden'
+    
+    
     // When the user clicks the button, open the modal 
-
+    
     modal.style.display = "block";
-
-
+    
+    
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
     }
-    // const contestantInput = document.getElementById('contestantInput');
-    // contestantInput.addEventListener('keydown', (event) => {
-    //     const value = event.target.value;
-    //     if (value > 0 || value < 8) {
-    //         contestantInput.value = value
-    //         console.log('enabled button')
-    //         beginButton.disabled = false
+    const hideModal = document.getElementById("hideModal");
+    if (skipInput === true){
+        hideModal.style.visibility = 'hidden'
+         closeButton.style.visibility = 'visible'
+        
+        return 
+    }
 
-    //     } else {
-    //         beginButton.disabled = true
-    //         console.log('diasbled button')
+   
 
-    //     }
-    // })
+    const beginButton = document.getElementById('beginButton');
     beginButton.addEventListener('click', () => {
-        console.log("hello world")
+     
        const choosePlayerButtons =  document.querySelectorAll('[name="age"]')
         let selectedValue = null;
              choosePlayerButtons.forEach(button => {
@@ -101,9 +106,7 @@ function initGame(numberOfPlayers ) {
     const yellowOption = document.getElementsByClassName('yellowChoice')[0];
 
     yellowOption.addEventListener('click', () => {
-         // clicked = document.getElementById('clickButton')
-        // clicked.play()
-
+      
         game.makeMove('yellow')
        
         
@@ -115,3 +118,5 @@ function initGame(numberOfPlayers ) {
         game.makeMove('chocolate')
     })
 }
+
+

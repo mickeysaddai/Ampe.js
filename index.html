@@ -32,16 +32,21 @@
     <div class="scoreboard">
         <div class="scoreboard_name">Team Match</div>
         <div class="scoreboard_name">Team Unmatch</div>
-
+        
         <div id="team_match_score">
-           <p>0</p>
-         </div>
-
+            <p>0</p>
+        </div>
+        
         <div id="team_unmatch_score">
             <p>0</p>
         </div> 
-    
+        
     </div> 
+    <div class="instructions">
+        <i class="fas fa-clipboard-list"></i>
+
+    </div>
+
 
     <div id="winner-container">
         <p> </p>
@@ -54,7 +59,7 @@
     <canvas id="scene"></canvas>
 
     <div class="parent-container">
-        <button id="start-button">Start Game</button>
+        <button id="start-button" style="visibility: hidden">Start Game</button>
 
         <div id="color-selector" style="margin-left: 20px;">
         </div>
@@ -80,7 +85,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span class="close" id="closeModal">&times;</span>
                 <h2>Welcome To Ampe.JS</h2>
             </div>
             <div class="modal-body" style="overflow: scroll;">
@@ -94,46 +99,49 @@
                     
                 <p>The round starts again and continues until all the players of an opponent's team are killed. The remaining team standing
                     becomes the WINNER.</p>
+                        <div id="hideModal">
 
-                <p> <strong>Enter the number of your contestants [2 - 8] and click Begin Game.</strong></p>
-                <div class="choosePlayer">
-                    <span>
-
-                        <input type="radio" id="age1" name="age" value="2" checked >
-                        <label for="age1">2</label><br>
-                    </span>
-
-                    <span>
-
-                        <input type="radio" id="age2" name="age" value="3">
-                        <label for="age2">3</label><br>
-                    </span>
-
-                    <span>
-
-                        <input type="radio" id="age4" name="age" value="4">
-                        <label for="age4">4</label>
-                    </span>
-
-                    <span>
-
-                        <input type="radio" id="age5" name="age" value="5">
-                        <label for="age4">5</label>
-                    </span>
-
-                    <span>
-                        
-                        <input type="radio" id="age4" name="age" value="6">
-                        <label for="age4">6</label>
-                    </span>
-                  
-                </div>
-
-    
-                <div id="contestantInputContainer">
-            
-                    <button id="beginButton">Begin game</button>
-                </div>
+                
+                                <p> <strong>Choose the number of contestants:</strong></p>
+                                <div class="choosePlayer">
+                                    <span>
+                
+                                        <input type="radio" id="age1" name="age" value="2" checked >
+                                         <label for="age1">2</label><br>
+                                    </span>
+                
+                                    <span>
+                
+                                        <input type="radio" id="age2" name="age" value="3">
+                                        <label for="age2">3</label><br>
+                                    </span>
+                
+                                    <span>
+                
+                                        <input type="radio" id="age4" name="age" value="4">
+                                        <label for="age4">4</label>
+                                    </span>
+                
+                                    <span>
+                
+                                        <input type="radio" id="age5" name="age" value="5">
+                                        <label for="age4">5</label>
+                                    </span>
+                
+                                    <span>
+                                        
+                                        <input type="radio" id="age4" name="age" value="6">
+                                        <label for="age4">6</label>
+                                    </span>
+                                  
+                                </div>
+                
+                    
+                                <div id="contestantInputContainer">
+                            
+                                    <button id="beginButton">Begin game</button>
+                                </div>
+                            </div>
     
             </div>
     
