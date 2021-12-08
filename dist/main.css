@@ -119,6 +119,7 @@ url(https://images.unsplash.com/photo-1495571758719-6ec1e876d6ae?ixlib=rb-1.2.1&
   padding: 7px 25px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #da501a;
+  margin-top: 20px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -314,7 +315,8 @@ footer {
   font-size: 20px;
   background: linear-gradient(to bottom, #dd2f19 5%, #615b61 100%);
   margin-left: 20px;
-  margin-top: 3px;
+  
+  /* padding: 20px; */
 }
 
 h2 {
@@ -351,7 +353,7 @@ input[type=text] {
 .instructions {
  
   font-size: 50px;
-  color: #ac9373;
+  color: #270f0f;
   margin: -50%;
   margin-right: -60%;
   margin-top: 60%;
@@ -359,6 +361,7 @@ input[type=text] {
 
 .instructionPad {
   font-size: xx-small;
+  font-weight: bold !important;
 
 }
 
