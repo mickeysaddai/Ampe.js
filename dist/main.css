@@ -38,7 +38,7 @@ url(https://images.unsplash.com/photo-1495571758719-6ec1e876d6ae?ixlib=rb-1.2.1&
 			800px 95%,
 			500px 50%,
 			1000px 100%,
-			/* 400px 0; */
+			/* 400px 0;  */
 		}
   
 }
@@ -298,6 +298,8 @@ p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 15px;
   padding: 7px 25px;
+  margin-left: 40%;
+  margin-top: 2.5%;
 }
 
 footer {
