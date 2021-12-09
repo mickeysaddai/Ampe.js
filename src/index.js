@@ -35,7 +35,7 @@ function launchModal(skipInput = false) {
     closeButton.style.visibility = 'hidden'
     
     
-    // When the user clicks the button, open the modal 
+    // mnb When the user clicks the button, open the modal 
     
     modal.style.display = "block";
     
