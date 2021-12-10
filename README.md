@@ -10,32 +10,19 @@ Two teams of equal number of players lined up against each other. One team will 
 ## Functionality and MVPs
 Users will be able to:
 
-
-
-
-
-* Select theme for the game
 * Designate the number of players for the game
-* Select a color for each player on their team at each round of the game
+* Select a color for each player's turn 
 * Eliminate opponet's player
+* Opt to play or mute background players
+* Review the instructions for the game during game play
  
 
-### Also Included:
-
-* Instructions on how to play the game
-* A production READMe.
-
-
-## WireFrame
-
-
-![Homepage 6](https://user-images.githubusercontent.com/88467155/136555139-03bfcac0-b9b5-4b46-8dfe-798c64379854.png)
 
 
 https://user-images.githubusercontent.com/88467155/145487894-3b6ad1e3-0e79-4690-a523-ec383c8da018.mp4
 ## Technologies, Libraries, APIs
 
-This project will be implemented with the following technologies:
+This project implemented the following technologies:
 
 * Webpack
 * Canvas to render the game board
