@@ -28,18 +28,3 @@ This project implemented the following technologies:
 * Canvas to render the game board
 
 
-## Implementation Timeline
-### Friday Afternoon & Weekend:  
-Have webpack running and setup board with canvas. Render intial state of board in canvas.
-
-### Monday: 
-Get the logic for the game running. Have players on the board. Setup the score board.
-
-### Tuesday:
-Get the game to correctly render to canvas
-
-### Wednesday: 
-Focus on styling, add in optional themes for player. 
-
-### Thursday Morning: 
-Deploy to github and rewrite proposal as production README.
