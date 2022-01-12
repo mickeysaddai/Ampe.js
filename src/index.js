@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('start-button').addEventListener('click', initGame)
 
     document.getElementsByClassName("instructions")[0].addEventListener('click', () => {
-        console.log("clickedMe")
+        // console.log("clickedMe")
         const skipInput = true;
         launchModal(skipInput)
 

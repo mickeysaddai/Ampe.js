@@ -44,20 +44,20 @@ class Game {
         this.teamUnmatch.activateCurrentPlayer({ chosenColor: null, shouldReset: this.shouldReset });
         this.teamMatch.activateCurrentPlayer({ chosenColor: chosenColor, shouldReset: this.shouldReset });
         const winner = this.getCurrentRoundWinner()
-        console.log("current winner is", winner.teamType);
+        // console.log("current winner is", winner.teamType);
         winnerEle.innerText = `Current winner is ${winner.teamType}`
 
         const { teamMatchScore, teamUnmatchScore } = this.scoreboard.getCurrentScore()
         teamMatchScoreEle.innerText = teamMatchScore;
         teamUnmatchScoreEle.innerText = teamUnmatchScore;
-        console.log("score is ", this.scoreboard.getCurrentScore())
+        // console.log("score is ", this.scoreboard.getCurrentScore())
 
         if (winner.teamType === 'TEAM_MATCH') {
             this.shouldReset = this.teamUnmatch.setNextPlayer();
         } else {
             this.shouldReset = this.teamMatch.setNextPlayer()
         }
-        console.log("Should Reset...", this.shouldReset)
+        // console.log("Should Reset...", this.shouldReset)
         if (this.isGameOver()) {
             return this.finishGame();
         }
@@ -65,8 +65,8 @@ class Game {
 
     getCurrentRoundWinner() {
 
-        console.log("match", this.teamMatch.getCurrentPlayer().color);
-        console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
+        // console.log("match", this.teamMatch.getCurrentPlayer().color);
+        // console.log("unmatch", this.teamUnmatch.getCurrentPlayer().color);
         if (this.teamMatch.getCurrentPlayer().color === this.teamUnmatch.getCurrentPlayer().color) {
             this.scoreboard.updateTeamMatchScore();
             return this.teamMatch.getCurrentPlayer();
@@ -78,7 +78,7 @@ class Game {
     }
 
     isGameOver() {
-        console.log("is over?", this.teamMatch.isLoser(), this.teamUnmatch.isLoser(), this.teamMatch.isLoser() || this.teamUnmatch.isLoser())
+        // console.log("is over?", this.teamMatch.isLoser(), this.teamUnmatch.isLoser(), this.teamMatch.isLoser() || this.teamUnmatch.isLoser())
         return this.teamMatch.isLoser() || this.teamUnmatch.isLoser()
     }
 

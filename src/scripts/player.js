@@ -65,7 +65,7 @@ class Player {
 
     deactivatePlayer(){
         this.clearColor();
-        console.log("deactivating player", this.pos, this.teamType)
+        // console.log("deactivating player", this.pos, this.teamType)
         this.drawPlayer();
         this.status = STATUS_TYPES.INACTIVE;
 
@@ -81,7 +81,7 @@ class Player {
     }  
     
     killPlayer(){
-        console.log("killing player", this)
+        // console.log("killing player", this)
         setTimeout(() => {
             this.status = STATUS_TYPES.DEAD;
             this.ctx.beginPath();

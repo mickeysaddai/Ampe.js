@@ -75,7 +75,7 @@ class Team {
             killedStatus = true;
             if (this.players.length === 1) {
                 this.players = []
-                console.log("killed last player in ", this.teamType, "isLost ->", this.isLoser())
+                // console.log("killed last player in ", this.teamType, "isLost ->", this.isLoser())
                 return killedStatus
             } else {
                 this.players = this.players.slice(0, this.players.length - 1);
@@ -88,7 +88,7 @@ class Team {
 
     resetInactivePlayers() {
         for (let i = 0; i < this.currentPlayerPosition; i++) {
-            console.log("resettting players for team", this.teamType)
+            // console.log("resettting players for team", this.teamType)
             this.players[i].drawPlayer()
         }
     }
